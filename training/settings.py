@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 't9)g@az-*lj7l&+@vtvxrxx7^m5c=!_=0i_2%r=7!g5et+y7!!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://umanet-python.herokuapp.com/','127.0.0.1']
 
 
 # Application definition

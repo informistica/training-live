@@ -1,0 +1,13 @@
+
+{% extends 'base.html'%}
+{%block contenuti%}
+    {% if api_list %}
+        <ol>
+        {% for api in api_list %}
+        <li><a href="{{ api }}">{{ api }}</a></li>
+        {% endfor %}
+        </ol>
+    {% else %}
+        <p>No api are available.</p>
+    {% endif %}
+{%endblock contenuti%}

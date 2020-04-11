@@ -1,0 +1,2 @@
+# training-live
+Django training

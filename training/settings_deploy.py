@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 't9)g@az-*lj7l&+@vtvxrxx7^m5c=!_=0i_2%r=7!g5et+y7!!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://umanet-python.herokuapp.com/','127.0.0.1']
 
 
 # Application definition
@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'esempi.apps.EsempiConfig',
-    'blog',
-    'crispy_forms'
+    'blog'
 ]
 
 MIDDLEWARE = [
@@ -58,8 +57,7 @@ ROOT_URLCONF = 'training.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        #inserisco anche '' per il path del pannello di admin
-        'DIRS': ['',os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,4 +122,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 #STATIC_ROOT= os.path.join(BASE_DIR, 'staticfiles')
-CRISPY_TEMPLATE_PACK = 'bootstrap4'

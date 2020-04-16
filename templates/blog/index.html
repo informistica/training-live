@@ -1,0 +1,13 @@
+
+{% extends 'base.html'%}
+{%block contenuti%}
+    {% if blog_command %}
+        <ol>
+        {% for comando in blog_command %}
+        <li><a href="{{ comando }}">{{ comando }}</a></li>
+        {% endfor %}
+        </ol>
+    {% else %}
+        <p>No command are available.</p>
+    {% endif %}
+{%endblock contenuti%}

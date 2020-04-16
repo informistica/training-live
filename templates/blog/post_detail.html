@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+ 
+{% block contenuti %}
+ <h3>Titolo:</h3>
+<h4>{{object.titolo}}</h4>
+<h3>Contenuto:</h3>
+<h5>{{object.contenuto}}</h5> 
+
+ 
+    <a href="/blog/modifica-post/{{ object.id }}"> 
+    <input type="submit" value="MODIFICA" class="btn btn-danger" value="MODIFICA"> 
+    </a>
+ 
+{% endblock contenuti %}

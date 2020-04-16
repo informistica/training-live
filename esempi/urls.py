@@ -17,4 +17,6 @@ urlpatterns = [
     path('elif', views.es_elif, name='elif'),
     # ex: /esempi/filter
     path('filter', views.es_filter, name='filter'),
+      # ex: /esempi/form
+    path('form', views.es_form, name='form'),
 ]

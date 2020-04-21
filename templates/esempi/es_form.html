@@ -3,6 +3,7 @@
 {%block titolo%}
 	{{block.super}} | FORM
 {%endblock titolo%}
+
 {%block contenuti%}
     <h3>
         Compila.. il form di contatto
@@ -10,11 +11,12 @@
   <div class="container">   
      <form action="" method="post" class="bootstrap4">
         {% csrf_token %}
-        {{ form|crispy }}
-        <input type="submit" value="Submit">
+        {{ form }}
+        <input type="submit" value="Submit" class="btn btn-info">
     </form> 
     </div> 
 <hr>
+<!--
     <div class="container">
        <form action="" method="post">
         {% csrf_token %}
@@ -25,9 +27,9 @@
                 {{ field }}
             </div>
         {% endfor%}
-      
         <input type="submit" value="Submit" class="btn btn-danger">
         </form>  
     </div>
+    -->
 
 {%endblock contenuti%}

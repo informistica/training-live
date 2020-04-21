@@ -2,11 +2,10 @@
 {% load crispy_forms_tags %}
 {%block contenuti%}
         <div class="container">
-            <h4>Modifica il Tuo Post!</h4>
+            <h5>Modifica il Tuo Post!</h5>
             <form method="post" class="bootstrap4">
                 {% csrf_token %}
                 {{ form|crispy }}
-               
                 <a href='/blog/elimina-post/{{pk}}'>
                     <input type="button" class="btn btn-danger" value="ELIMINA">
                 </a>  

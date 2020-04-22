@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
  
 {% block contenuti %}
-    <h4><a href="/blog">Posts:</a></h4>
+    <h5>Elenco post:</a></h5>
     {% for post in posts %}
         <p><strong>Titolo: </strong><a href="{{post.get_absolute_url}}">{{ post.titolo }}</a></p>
         <!-- 

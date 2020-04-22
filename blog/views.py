@@ -6,6 +6,8 @@ from .models import BlogPostModel
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.shortcuts import get_list_or_404, get_object_or_404
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 
 #pagina con la lista delle applicazioni  
@@ -25,6 +27,7 @@ def index(request):
     return render(request, "blog/index.html", context)
 
 #Creazione del post
+@login_required(login_url='/accounts/login/')
 def creaPostView(request):
     if request.method == "POST": 
         form = BlogPostModelForm(request.POST) #ottengo il form dalla richiesta
@@ -39,6 +42,7 @@ def creaPostView(request):
     return render(request, "blog/crea_post.html", context)  #passo il form alla pagina per il render
 
 #Modifica del post
+@login_required(login_url='/accounts/login/')
 def modificaPostView(request, pk=None):
     obj = get_object_or_404(BlogPostModel, pk=pk) #carico il post in base alla chiave primaria pk
     form = BlogPostModelForm(request.POST or None, instance=obj)  #passo l'oggetto post al form

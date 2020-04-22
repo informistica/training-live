@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from . import views
+#from accounts import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,4 +24,6 @@ urlpatterns = [
     #path('',include('esempi.urls')),
     path('esempi/',include('esempi.urls')),
     path('blog/',include('blog.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('registrazione/', include('accounts.urls'))
 ]

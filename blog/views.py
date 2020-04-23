@@ -54,6 +54,7 @@ def modificaPostView(request, pk=None):
     return render(request, 'blog/modifica_post.html', context)
 
 #Elimina del post
+@login_required(login_url='/accounts/login/')
 def eliminaPostView(request, pk=None):
     obj = get_object_or_404(BlogPostModel, pk=pk) #carico il post in base alla chiave primaria pk
     obj.delete()

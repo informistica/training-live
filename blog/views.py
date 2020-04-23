@@ -33,8 +33,10 @@ def creaPostView(request):
         form = BlogPostModelForm(request.POST) #ottengo il form dalla richiesta
         if form.is_valid():     #validazione del form
             print("Il Form è Valido!")
-            new_post = form.save()  #creo il post nel db
+            new_post = form.save(commit=False)  #creo il post ma non salvo
+            new_post.autore=request.user 
             print("new_post: ", new_post)
+            new_post.save()
             return HttpResponseRedirect("lista-post")
     else: #se la chiamata non è POST vuol dire che è la prima chiamata GET, quindi mostro il form vuoto
         form = BlogPostModelForm()

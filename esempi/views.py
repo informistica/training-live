@@ -21,20 +21,21 @@ def es_if(request):
 
 def es_ifelse(request):
     #https://www.decodejava.com/django-template-if-else-tag.htm
-    dic = { 'var1' : 100,
-    'var2' : 400,
+    dic = { 'var1' : 'admin',
+    'var2' : 'admin',
     'var3' : 600 }
     return render(request, "esempi/es_ifelse.html", dic)
 
 
 def es_for(request):
     #https://www.decodejava.com/django-template-for-tag.htm
-    dic = { 'list2': [1, datetime.date(2019,7,16), 'Do not give up!'] }
+    dic = { 'list1': [1, datetime.date(2019,7,16), 'Do not give up!'],'list2': [1, datetime.date(2019,7,16), 'Do not give up!'] }
     return render(request, "esempi/es_for.html", dic)
 
 def es_ifequal(request):
     #https://www.decodejava.com/django-template-for-tag.htm
-    dic = { 'list2': [1, datetime.date(2019,7,16), 'Do not give up!'] }
+    dic = { 'list1': [1, datetime.date(2019,7,16), 'Do not give up!'],'list2': [1, datetime.date(2019,7,16), 'Do not give up!'],'str1':'admin','str2':'admin' }
+  
     return render(request, "esempi/es_ifequal.html", dic)
 
 def es_ifnotequal(request):

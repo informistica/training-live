@@ -4,10 +4,10 @@
     <list default="true" id="94d8b8e6-e53f-4a05-8b07-8d200f026560" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utenti/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/utenti/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utenti/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/utenti/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/profilo.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/profilo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/utenti/profilo.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/utenti/profilo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/training/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/urls.py" afterDir="false" />
     </list>

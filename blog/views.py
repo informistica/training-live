@@ -7,6 +7,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.shortcuts import get_list_or_404, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.urls import reverse
 
@@ -76,8 +77,8 @@ class PostDetailView(DetailView):
     template_name = "blog/post_detail.html" #pagina per mostrare i dati
     
    
-
-class listaPostView(ListView):
+ 
+class listaPostView(LoginRequiredMixin,ListView):
     model = BlogPostModel #modello dei dati da utilizzare 
     template_name = "blog/lista_post.html"  #pagina per mostrare i dati
     

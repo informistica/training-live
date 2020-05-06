@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'esempi.apps.EsempiConfig',
     'blog',   
     'crispy_forms',
-    'accounts'
+    'utenti',
 ]
 
 MIDDLEWARE = [

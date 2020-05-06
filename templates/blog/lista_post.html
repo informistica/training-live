@@ -1,13 +1,16 @@
 {% extends 'base.html' %}
  
 {% block contenuti %}
-    <h5>Elenco post:</a></h5>
+    <h5  class="my-3" >Elenco post:</a></h5>
+    <div class="my-3"></div>
     {% for post in posts %}
-        <p><strong>Titolo: </strong><a href="{% url 'blog:leggi_post' pk=post.id %}">{{ post.titolo }}</a></p>
+        <p>{{ forloop.counter }})  <a href="{% url 'blog:leggi_post' pk=post.id %}">{{ post.titolo }}</a>
+            <small>(<a href="{% url 'user_profile' username=post.autore%}">{{ post.autore }}</a> - {{ post.data_creazione }})</small> 
+        </p>
         <!-- 
-        <p><strong>Titolo: </strong><a href="/blog/leggi-post/{{post.id }}">{{ post.titolo }}</a></p>
+        <p><a href="/blog/leggi-post/{{post.id }}">{{ post.titolo }}</a></p>
         --> 
         <hr>
     {% endfor %}
-
+</div>
 {% endblock contenuti %}

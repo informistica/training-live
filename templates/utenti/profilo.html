@@ -10,7 +10,7 @@
         <div class="col-4">
             <div class="card my-2">
                 <div class="card-header">
-                    <h4>{% if request.user == user %}Il Tuo {% endif %}Profilo Utente</h4>
+                    <h4>{% if request.user == user %}Il tuo {% endif %}profilo Utente</h4>
                 </div>
                 <div class="card-body">
                     <p class="lead">@{{ user }}</p>
@@ -36,7 +36,7 @@
                         {% if request.user != user %}
                             <p>{{ user }} non ha creato alcun post!</p>
                         {% else %}
-                            <p>Non hai creato alcun post! <a href="/blog/crea-post">Inizia Subito!</a></p>
+                            <p>Non hai creato alcun post! <a href="{% url 'blog:crea_post'%}">Inizia Subito!</a></p>
                         {% endif %}
                     {% endfor %}
                 </div>

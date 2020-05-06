@@ -36,8 +36,8 @@ class UserList(LoginRequiredMixin, ListView):
 @login_required(login_url='/accounts/login/')
 def userProfileView(request, username):
     user = get_object_or_404(User, username=username)
-    post_utente = BlogPostModel.objects.filter(autore=user).order_by("-pk")
-    context = {"user": user, "posts_utente": post_utente}
+    posts_utente = BlogPostModel.objects.filter(autore=user).order_by("-pk")
+    context = {"user": user, "posts_utente": posts_utente}
     return render(request, 'utenti/profilo.html', context)
 
 

@@ -85,7 +85,7 @@ class listaPostView(LoginRequiredMixin,ListView):
     #recupera di dati da passare alla pagina per il render
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["posts"] = BlogPostModel.objects.all()
+        context["posts"] = BlogPostModel.objects.all().order_by("-data_creazione")
         return context
 
 

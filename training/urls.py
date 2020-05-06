@@ -19,11 +19,10 @@ from . import views
 #from accounts import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    #path('',include('esempi.urls')),
-    path('esempi/',include('esempi.urls')),
-    path('blog/',include('blog.urls')),
+    path('admin/', admin.site.urls),
+    path('esempi/',include('esempi.urls',namespace="esempi")),
+    path('blog/',include('blog.urls', namespace="blog")),
     path('accounts/', include('django.contrib.auth.urls')),
     path('registrazione/', include('accounts.urls'))
 ]

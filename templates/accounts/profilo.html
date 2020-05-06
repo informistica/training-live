@@ -27,8 +27,8 @@
                     {% for post in posts_utente %}
                         <p><strong> Titolo: </strong> {{ post.titolo }}
                             <br>{{ post.contenuto }}
+                            <br>{{ post.data_creazione }}
                         </p>
-                       
                     {% empty %}
                         {% if request.user != user %}
                             <p>{{ user }} non ha creato alcun post!</p>
@@ -38,9 +38,7 @@
                     {% endfor %}
                 </div>
                 <div class="card-footer"></div>
-
             </div>
-
         </div>
 
     </div>

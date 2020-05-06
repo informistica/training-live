@@ -37,14 +37,14 @@
               Esempi
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/esempi/if">if</a>
-              <a class="dropdown-item" href="/esempi/ifelse">ifelse</a>
-              <a class="dropdown-item" href="/esempi/elif">elif</a>
-              <a class="dropdown-item" href="/esempi/for">for</a>
-              <a class="dropdown-item" href="/esempi/ifequal">ifequal</a>
-              <a class="dropdown-item" href="/esempi/ifnotequal">ifnotequal</a>
-              <a class="dropdown-item" href="/esempi/filter">filter</a>
-              <a class="dropdown-item" href="/esempi/for">for</a>
+              <a class="dropdown-item" href="{% url 'esempi:if' %}">if</a>
+              <a class="dropdown-item" href="{% url 'esempi:ifelse' %}">ifelse</a>
+              <a class="dropdown-item" href="{% url 'esempi:elif' %}">elif</a>
+              <a class="dropdown-item" href="{% url 'esempi:for' %}">for</a>
+              <a class="dropdown-item" href="{% url 'esempi:ifequal' %}">ifequal</a>
+              <a class="dropdown-item" href="{% url 'esempi:ifnotequal' %}">ifnotequal</a>
+              <a class="dropdown-item" href="{% url 'esempi:filter' %}">filter</a>
+              <a class="dropdown-item" href="{% url 'esempi:for' %}">for</a>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -52,8 +52,9 @@
               Blog
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/blog/crea-post">Crea post</a>
-              <a class="dropdown-item" href="/blog/lista-post">Leggi post</a>
+            <!--  <a class="dropdown-item" href="/blog/crea-post">Crea post</a> -->
+              <a class="dropdown-item" href="{% url 'blog:crea_post' %}">Crea post</a>
+              <a class="dropdown-item" href="{% url 'blog:lista_post' %}">Leggi post</a>
             </div>
           </li>
          

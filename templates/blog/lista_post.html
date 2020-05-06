@@ -3,11 +3,9 @@
 {% block contenuti %}
     <h5>Elenco post:</a></h5>
     {% for post in posts %}
-        <p><strong>Titolo: </strong><a href="{{post.get_absolute_url}}">{{ post.titolo }}</a></p>
+        <p><strong>Titolo: </strong><a href="{% url 'blog:leggi_post' pk=post.id %}">{{ post.titolo }}</a></p>
         <!-- 
         <p><strong>Titolo: </strong><a href="/blog/leggi-post/{{post.id }}">{{ post.titolo }}</a></p>
-        <p><strong>Contenuto: </strong>{{ post.contenuto }}</p>
-        <p><strong>Bozza: </strong>{{ post.bozza }}</p>
         --> 
         <hr>
     {% endfor %}

@@ -21,7 +21,7 @@ from . import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('admin/', admin.site.urls),
-    path('esempi/',include('esempi.urls',namespace="esempi")),
+    path('esempi/',include('esempi.urls', namespace="esempi")),
     path('blog/',include('blog.urls', namespace="blog")),
     path('accounts/', include('django.contrib.auth.urls')),
     path('utenti/', include('utenti.urls'))

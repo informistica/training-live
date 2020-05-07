@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94d8b8e6-e53f-4a05-8b07-8d200f026560" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utenti/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/utenti/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utenti/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/utenti/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/utenti/profilo.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/utenti/profilo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/training/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/urls.py" afterDir="false" />
-    </list>
+    <list default="true" id="94d8b8e6-e53f-4a05-8b07-8d200f026560" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -116,6 +107,7 @@
       <workItem from="1588677219598" duration="1061000" />
       <workItem from="1588692487491" duration="1806000" />
       <workItem from="1588755006653" duration="1489000" />
+      <workItem from="1588864094841" duration="54000" />
     </task>
     <servers />
   </component>
@@ -130,11 +122,12 @@
       <screen x="0" y="23" width="2560" height="1057" />
     </state>
     <state x="274" y="134" key="#Inspections/0.23.2560.1057@0.23.2560.1057" timestamp="1587845452510" />
-    <state x="208" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588693074615">
-      <screen x="0" y="23" width="2560" height="992" />
+    <state x="208" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588864148182">
+      <screen x="0" y="23" width="2560" height="993" />
     </state>
     <state x="104" y="73" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.777@0.23.1280.777" timestamp="1587835016735" />
     <state x="208" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2560.992@0.23.2560.992" timestamp="1588693074615" />
+    <state x="208" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2560.993@0.23.2560.993" timestamp="1588864148182" />
     <state x="1134" y="281" key="FileChooserDialogImpl" timestamp="1588692827833">
       <screen x="0" y="23" width="2560" height="992" />
     </state>

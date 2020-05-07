@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:heroku" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="94d8b8e6-e53f-4a05-8b07-8d200f026560" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -107,15 +136,48 @@
       <workItem from="1588677219598" duration="1061000" />
       <workItem from="1588692487491" duration="1806000" />
       <workItem from="1588755006653" duration="1489000" />
-      <workItem from="1588864094841" duration="54000" />
+      <workItem from="1588864094841" duration="406000" />
     </task>
+    <task id="LOCAL-00001" summary="Connect datasource dbsqlite">
+      <created>1588864289143</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588864289144</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Connect datasource dbsqlite" />
+    <option name="LAST_COMMIT_MESSAGE" value="Connect datasource dbsqlite" />
   </component>
   <component name="WindowStateProjectService">
     <state x="274" y="134" key="#Inspections" timestamp="1587845452510">
@@ -128,6 +190,10 @@
     <state x="104" y="73" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.777@0.23.1280.777" timestamp="1587835016735" />
     <state x="208" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2560.992@0.23.2560.992" timestamp="1588693074615" />
     <state x="208" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2560.993@0.23.2560.993" timestamp="1588864148182" />
+    <state x="960" y="94" key="CommitChangelistDialog2" timestamp="1588864288668">
+      <screen x="0" y="23" width="2560" height="993" />
+    </state>
+    <state x="960" y="94" key="CommitChangelistDialog2/0.23.2560.993@0.23.2560.993" timestamp="1588864288668" />
     <state x="1134" y="281" key="FileChooserDialogImpl" timestamp="1588692827833">
       <screen x="0" y="23" width="2560" height="992" />
     </state>

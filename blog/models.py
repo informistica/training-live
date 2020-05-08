@@ -28,6 +28,7 @@ class BlogCommentModel(models.Model):
     contenuto = models.TextField()
     data_creazione = models.DateTimeField(auto_now_add=True)
     attivo = models.BooleanField(default=True)
+    punti = models.SmallIntegerField(default=1)
 
     class Meta:
         ordering = ('data_creazione',)

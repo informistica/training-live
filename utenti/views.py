@@ -8,6 +8,7 @@ from django.shortcuts import get_object_or_404,  render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.views.generic.list import ListView
+from django.db.models import Count, Sum
 
 # Create your views here.
 
@@ -38,7 +39,8 @@ def userProfileView(request, username):
     user = get_object_or_404(User, username=username)
     post_utente = BlogPostModel.objects.filter(autore=user).order_by("-pk")
     commenti_utente = BlogCommentModel.objects.filter(autore=user).order_by("-pk")
-    context = {"user": user, "post_utente": post_utente, "commenti_utente": commenti_utente }
+    punti_utente = BlogCommentModel.objects.filter(autore=user).aggregate(Sum('punti'))
+    context = {"user": user, "post_utente": post_utente, "commenti_utente": commenti_utente, "punti_utente": punti_utente}
     return render(request, 'utenti/profilo.html', context)
 
 

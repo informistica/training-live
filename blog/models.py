@@ -24,7 +24,7 @@ class BlogCommentModel(models.Model):
     post = models.ForeignKey(BlogPostModel,
                              on_delete=models.CASCADE,
                              related_name='comments')
-    autore = models.ForeignKey(User, on_delete=models.CASCADE, related_name="post")
+    autore = models.ForeignKey(User, on_delete=models.CASCADE, related_name="comment")
     contenuto = models.TextField()
     data_creazione = models.DateTimeField(auto_now_add=True)
     attivo = models.BooleanField(default=True)

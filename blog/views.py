@@ -52,20 +52,23 @@ def creaPostView(request):
 
 # Creazione del commento
 @login_required(login_url='/accounts/login/')
-def creaCommentView(request):
+def creaCommentView(request,pk):
+    post = get_object_or_404(BlogPostModelForm, pk=pk)
     if request.method == "POST":
         form = BlogCommentModelForm(request.POST)  # ottengo il form dalla richiesta
         if form.is_valid():  # validazione del form
             print("Il Form è Valido!")
             new_comment = form.save(commit=False)  # creo il post ma non salvo
+            new_comment.post = post
             new_comment.autore = request.user
             print("new_comment: ", new_comment)
             new_comment.save()
-            return HttpResponseRedirect("discussione-post")
+            url_discussione = reverse("risposte_post", kwargs={"pk": pk})
+            return HttpResponseRedirect(url_discussione)
     else:  # se la chiamata non è POST vuol dire che è la prima chiamata GET, quindi mostro il form vuoto
-        form = BlogPostModelForm()
+        form = BlogCommentModelForm()
     context = {"form": form}  # contesto dei parametri da passare al render
-    return render(request, "blog/crea_post.html", context)  # passo il form alla pagina per il render
+    return render(request, "blog/crea_comment.html", context)  # passo il form alla pagina per il render
 
 
 # Modifica del post
@@ -99,8 +102,40 @@ class PostDetailView(DetailView):
     model = BlogPostModel  # modello dei dati da utilizzare
     template_name = "blog/post_detail.html"  # pagina per mostrare i dati
 
+#questa sotto dovrà sostituire quella sopra
+
+def PostDetailView2(request, pk):
+    post = get_object_or_404(BlogPostModel, id=pk)
+    # List of active comments for this post
+    comments = post.comments.filter(attivo=True)
+
+    new_comment = None
+
+    if request.method == 'POST':
+        # A comment was posted
+        comment_form = BlogCommentModelForm(data=request.POST)
+        if comment_form.is_valid():
+            # Create Comment object but don't save to database yet
+            new_comment = comment_form.save(commit=False)
+            # Assign the current post to the comment
+            new_comment.post = post
+            new_comment.autore = request.user
+            # Save the comment to the database
+            new_comment.save()
+    else:
+        comment_form = BlogCommentModelForm()
+    
+    context= {'post': post,
+              'comments': comments,
+              'new_comment': new_comment,
+              'comment_form': comment_form
+            }
+    return render(request,'blog/p_detail.html',context)
+
+
+
 #lista risposte ad un post
-class DiscussionePostView(LoginRequiredMixin, ListView):
+class RispostePostView(LoginRequiredMixin, ListView):
     model = BlogCommentModel  # modello dei dati da utilizzare
     template_name = "blog/lista_commenti.html"  # pagina per mostrare i dati
 

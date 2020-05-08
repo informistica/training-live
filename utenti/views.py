@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from utenti.forms import FormRegistrazione
 from blog.views import listaPostView
-from blog.models import BlogPostModel
+from blog.models import BlogPostModel,BlogCommentModel
 from django.shortcuts import get_object_or_404,  render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
@@ -36,8 +36,9 @@ class UserList(LoginRequiredMixin, ListView):
 @login_required(login_url='/accounts/login/')
 def userProfileView(request, username):
     user = get_object_or_404(User, username=username)
-    posts_utente = BlogPostModel.objects.filter(autore=user).order_by("-pk")
-    context = {"user": user, "posts_utente": posts_utente}
+    post_utente = BlogPostModel.objects.filter(autore=user).order_by("-pk")
+    commenti_utente = BlogCommentModel.objects.filter(autore=user).order_by("-pk")
+    context = {"user": user, "post_utente": post_utente, "commenti_utente": commenti_utente }
     return render(request, 'utenti/profilo.html', context)
 
 

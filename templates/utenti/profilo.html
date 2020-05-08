@@ -24,13 +24,19 @@
         <div class="col-8">
             <div class="card my-2">
                 <div class="card-header">
-                    <h4>Posts</h4>
+                    <h4>Post</h4>
                 </div>
                 <div class="card-body">
-                    {% for post in posts_utente %}
-                        <p><strong> Titolo: </strong> {{ post.titolo }}
+                    {% for post in post_utente %}
+                        <p><strong> Titolo: </strong> <a href="{% url 'blog:leggi_post' pk=post.pk%}">{{ post.titolo }}</a>
                             <br>{{ post.contenuto }}
                             <br>{{ post.data_creazione }}
+                            <br>Stato : 
+                            {% if post.bozza == True %}
+                            Bozza
+                            {% else %}
+                            Pubblicato
+                            {% endif %}
                         </p>
                     {% empty %}
                         {% if request.user != user %}
@@ -43,7 +49,43 @@
                 <div class="card-footer"></div>
             </div>
         </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+           
+        </div>
+
+        <div class="col-8">
+            <div class="card my-2">
+                <div class="card-header">
+                    <h4>Commenti</h4>
+                </div>
+                <div class="card-body">
+                    {% for commento in commenti_utente %}
+
+                            <br>{{ commento.contenuto }}
+                            <br>{{ commento.data_creazione }}
+                            <br>Stato : 
+                            {% if commento.attivo == True %}
+                            Attivo
+                            {% else %}
+                            Disattivo
+                            {% endif %}
+                        </p>
+                    {% empty %}
+                        {% if request.user != user %}
+                            <p>{{ user }} non ha creato alcun commento!</p>
+                        {% else %}
+                            <p>Non hai creato alcun commento! </p>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="card-footer"></div>
+            </div>
+        </div>
 
     </div>
+
 
 {% endblock contenuti %}

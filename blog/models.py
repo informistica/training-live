@@ -33,4 +33,4 @@ class BlogCommentModel(models.Model):
         ordering = ('data_creazione',)
 
     def __str__(self):
-        return f'Commento di {self.autore} su{self.post}'
+        return f'Commento di {self.autore} su {self.post}'

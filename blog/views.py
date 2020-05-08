@@ -52,7 +52,7 @@ def creaPostView(request):
 
 # Creazione del commento
 @login_required(login_url='/accounts/login/')
-def creaCommentView(request,pk):
+def creaCommentView(request, pk):
     post = get_object_or_404(BlogPostModelForm, pk=pk)
     if request.method == "POST":
         form = BlogCommentModelForm(request.POST)  # ottengo il form dalla richiesta
@@ -103,15 +103,13 @@ def eliminaPostView(request, pk=None):
 #     model = BlogPostModel  # modello dei dati da utilizzare
 #     template_name = "blog/post_detail.html"  # pagina per mostrare i dati
 
-#questa sotto sostituisce quella sopra
+# questa sotto sostituisce quella sopra
 
 def PostDetailView2(request, pk):
     post = get_object_or_404(BlogPostModel, id=pk)
     # Lista di commenti attivi per questo post
     comments = post.comments.filter(attivo=True)
-
     new_comment = None
-
     if request.method == 'POST':
         # il commento è stato inviato
         comment_form = BlogCommentModelForm(data=request.POST)
@@ -120,33 +118,20 @@ def PostDetailView2(request, pk):
             new_comment = comment_form.save(commit=False)
             # metto in relazione il commento al post a cui si riferisce
             new_comment.post = post
-             # metto in relazione il commento al suo autore
+            # metto in relazione il commento al suo autore
             new_comment.autore = request.user
             # Salvo il commento nel database
             new_comment.save()
     else:
-        #preparo il form vuoto in cui scrivere il commento
+        # preparo il form vuoto in cui scrivere il commento
         comment_form = BlogCommentModelForm()
-    
-    context= {'post': post,
-              'comments': comments,
-              'new_comment': new_comment,
-              'comment_form': comment_form
-            }
-    return render(request,'blog/post_detail.html',context)
 
-
-
-#lista risposte ad un post
-# class RispostePostView(LoginRequiredMixin, ListView):
-#     model = BlogCommentModel  # modello dei dati da utilizzare
-#     template_name = "blog/lista_commenti.html"  # pagina per mostrare i dati
-
-#     # recupera di dati da passare alla pagina per il render
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context["comments"] = BlogCommentModel.objects.all().order_by("-data_creazione")
-#         return context
+    context = {'post': post,
+               'comments': comments,
+               'new_comment': new_comment,
+               'comment_form': comment_form
+               }
+    return render(request, 'blog/post_detail.html', context)
 
 
 class listaPostView(LoginRequiredMixin, ListView):

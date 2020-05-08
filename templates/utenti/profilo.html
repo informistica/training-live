@@ -15,7 +15,8 @@
                 <div class="card-body">
                     <p class="lead">@{{ user }}</p>
                     <p class="mb-0">Iscrizione: {{ user.date_joined|date:"d M Y" }}</p>
-                    <p class="mb-0">Posts: {{ user.post.count }}</p>
+                    <p class="mb-0">Post: {{ user.post.count }}</p>
+                    <p class="mb-0">Commenti: {{ user.comment.count }}</p>
                 </div>
                 <div class="card-footer"></div>
             </div>
@@ -24,7 +25,7 @@
         <div class="col-8">
             <div class="card my-2">
                 <div class="card-header">
-                    <h4>Post</h4>
+                    <h4>Post ({{ user.post.count }})</h4>
                 </div>
                 <div class="card-body">
                     {% for post in post_utente %}
@@ -53,18 +54,15 @@
 
     <div class="row">
         <div class="col-4">
-           
         </div>
-
         <div class="col-8">
             <div class="card my-2">
                 <div class="card-header">
-                    <h4>Commenti</h4>
+                    <h4>Commenti ({{ commenti_utente.count }}) </h4>
                 </div>
                 <div class="card-body">
                     {% for commento in commenti_utente %}
-
-                            <br>{{ commento.contenuto }}
+                        <br>{{ forloop.counter}}) {{ commento.contenuto }}
                             <br>{{ commento.data_creazione }}
                             <br>Stato : 
                             {% if commento.attivo == True %}
@@ -72,7 +70,9 @@
                             {% else %}
                             Disattivo
                             {% endif %}
+                            <br><a href="{% url 'blog:leggi_post' pk=commento.post.pk%}"> -> vai alla discussione</a>
                         </p>
+                        <hr>
                     {% empty %}
                         {% if request.user != user %}
                             <p>{{ user }} non ha creato alcun commento!</p>

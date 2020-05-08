@@ -30,7 +30,15 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94d8b8e6-e53f-4a05-8b07-8d200f026560" name="Default Changelist" comment="" />
+    <list default="true" id="94d8b8e6-e53f-4a05-8b07-8d200f026560" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/blog/lista_commenti.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -137,6 +145,7 @@
       <workItem from="1588692487491" duration="1806000" />
       <workItem from="1588755006653" duration="1489000" />
       <workItem from="1588864094841" duration="406000" />
+      <workItem from="1588872544795" duration="9984000" />
     </task>
     <task id="LOCAL-00001" summary="Connect datasource dbsqlite">
       <created>1588864289143</created>
@@ -173,6 +182,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

@@ -20,3 +20,17 @@ class BlogPostModel(models.Model):
     #   return f"/blog/leggi-post/{self.id}"
    
 
+class BlogCommentModel(models.Model):
+    post = models.ForeignKey(BlogPostModel,
+                             on_delete=models.CASCADE,
+                             related_name='comments')
+    autore = models.ForeignKey(User, on_delete=models.CASCADE, related_name="post")
+    contenuto = models.TextField()
+    data_creazione = models.DateTimeField(auto_now_add=True)
+    attivo = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ('data_creazione',)
+
+    def __str__(self):
+        return f'Comment by {self.autore} on {self.post}'

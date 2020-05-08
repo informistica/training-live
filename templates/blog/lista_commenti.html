@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+ 
+{% block contenuti %}
+    <h5  class="my-3" >Elenco commenti:</a></h5>
+    <div class="my-3"></div>
+    {% for comment in comments %}
+        <p>{{ forloop.counter }})  {{ comment.contenuto }}
+            <small>(<a href="{% url 'user_profile' username=comment.autore%}">{{ comment.autore }}</a> - {{ comment.data_creazione }})</small>
+        </p>
+        <hr>
+    {% endfor %}
+</div>
+{% endblock contenuti %}

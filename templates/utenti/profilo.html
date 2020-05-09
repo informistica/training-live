@@ -17,7 +17,9 @@
                     <p class="mb-0">Iscrizione: {{ user.date_joined|date:"d M Y" }}</p>
                     <p class="mb-0">Post: {{ user.post.count }}</p>
                     <p class="mb-0">Commenti: {{ user.comment.count }}</p>
-                    <p class="mb-0">Punti: {{ punti_utente.punti__sum }}</p>
+                    <p class="mb-0">Punti:{% if punti_utente.punti__sum == None %} 0 {% else %} {{ punti_utente.punti__sum }} {% endif %}</p>
+
+
                 </div>
                 <div class="card-footer"></div>
             </div>
@@ -26,7 +28,8 @@
         <div class="col-8">
             <div class="card my-2">
                 <div class="card-header">
-                    <h4>Post ({{ user.post.count }})</h4>
+                    <h4>Post ({% if user.post.count == None %} 0 {% else %} {{ user.post.count }} {% endif %})</h4>
+
                 </div>
                 <div class="card-body">
                     {% for post in post_utente %}
@@ -65,7 +68,7 @@
                     {% for commento in commenti_utente %}
                         <br>{{ forloop.counter}}) {{ commento.contenuto }}
                             <br>{{ commento.data_creazione }}
-                            <br>Punti:{{ commento.punti }}
+                            <br>Punti:{% if commento.punti == None %} 0 {% else %} {{ commento.punti }} {% endif %}
                             <br>Stato : 
                             {% if commento.attivo == True %}
                             Attivo

@@ -34,6 +34,12 @@ class UserList(LoginRequiredMixin, ListView):
     model = User
     template_name = 'utenti/profili.html'
 
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        context['object_list'] = User.objects.annotate(tot_punti=Sum('comment__punti')).order_by("-tot_punti")
+        return context
+
 @login_required(login_url='/accounts/login/')
 def userProfileView(request, username):
     user = get_object_or_404(User, username=username)

@@ -31,20 +31,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94d8b8e6-e53f-4a05-8b07-8d200f026560" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/blog/migrations/0003_blogcommentmodel_punti.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/migrations copia/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/migrations copia/0002_auto_20200422_2216.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/migrations copia/0003_auto_20200422_2223.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/migrations copia/0004_auto_20200422_2225.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/migrations copia/0005_remove_blogpostmodel_autore.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/migrations copia/0006_blogpostmodel_autore.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/migrations copia/0007_auto_20200423_0553.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/migrations copia/0008_auto_20200506_1502.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/migrations copia/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/post_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/post_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/utenti/profili.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/utenti/profili.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/utenti/profilo.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/utenti/profilo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utenti/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/utenti/views.py" afterDir="false" />
     </list>
@@ -156,6 +146,7 @@
       <workItem from="1588864094841" duration="406000" />
       <workItem from="1588872544795" duration="9984000" />
       <workItem from="1588951111580" duration="5448000" />
+      <workItem from="1589015440636" duration="4811000" />
     </task>
     <task id="LOCAL-00001" summary="Connect datasource dbsqlite">
       <created>1588864289143</created>
@@ -226,38 +217,42 @@
       <screen x="0" y="23" width="2560" height="992" />
     </state>
     <state x="1134" y="281" key="FileChooserDialogImpl/0.23.2560.992@0.23.2560.992" timestamp="1588692827833" />
-    <state width="1563" height="214" key="GridCell.Tab.0.bottom" timestamp="1588973260368">
-      <screen x="0" y="23" width="2560" height="993" />
+    <state width="1481" height="214" key="GridCell.Tab.0.bottom" timestamp="1589032055822">
+      <screen x="0" y="23" width="2560" height="995" />
     </state>
     <state width="1259" height="250" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1587835434358" />
     <state width="1415" height="327" key="GridCell.Tab.0.bottom/0.23.2560.1057@0.23.2560.1057" timestamp="1587919738007" />
     <state width="1448" height="314" key="GridCell.Tab.0.bottom/0.23.2560.992@0.23.2560.992" timestamp="1588694420469" />
     <state width="1563" height="214" key="GridCell.Tab.0.bottom/0.23.2560.993@0.23.2560.993" timestamp="1588973260368" />
     <state width="1563" height="214" key="GridCell.Tab.0.bottom/0.23.2560.994@0.23.2560.994" timestamp="1588960816124" />
-    <state width="1563" height="214" key="GridCell.Tab.0.center" timestamp="1588973260368">
-      <screen x="0" y="23" width="2560" height="993" />
+    <state width="1481" height="214" key="GridCell.Tab.0.bottom/0.23.2560.995@0.23.2560.995" timestamp="1589032055822" />
+    <state width="1481" height="214" key="GridCell.Tab.0.center" timestamp="1589032055820">
+      <screen x="0" y="23" width="2560" height="995" />
     </state>
     <state width="1259" height="250" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1587835434356" />
     <state width="1415" height="327" key="GridCell.Tab.0.center/0.23.2560.1057@0.23.2560.1057" timestamp="1587919738006" />
     <state width="1448" height="314" key="GridCell.Tab.0.center/0.23.2560.992@0.23.2560.992" timestamp="1588694420468" />
     <state width="1563" height="214" key="GridCell.Tab.0.center/0.23.2560.993@0.23.2560.993" timestamp="1588973260368" />
     <state width="1563" height="214" key="GridCell.Tab.0.center/0.23.2560.994@0.23.2560.994" timestamp="1588960816124" />
-    <state width="1563" height="214" key="GridCell.Tab.0.left" timestamp="1588973260367">
-      <screen x="0" y="23" width="2560" height="993" />
+    <state width="1481" height="214" key="GridCell.Tab.0.center/0.23.2560.995@0.23.2560.995" timestamp="1589032055820" />
+    <state width="1481" height="214" key="GridCell.Tab.0.left" timestamp="1589032055817">
+      <screen x="0" y="23" width="2560" height="995" />
     </state>
     <state width="1259" height="250" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1587835434356" />
     <state width="1415" height="327" key="GridCell.Tab.0.left/0.23.2560.1057@0.23.2560.1057" timestamp="1587919738006" />
     <state width="1448" height="314" key="GridCell.Tab.0.left/0.23.2560.992@0.23.2560.992" timestamp="1588694420468" />
     <state width="1563" height="214" key="GridCell.Tab.0.left/0.23.2560.993@0.23.2560.993" timestamp="1588973260367" />
     <state width="1563" height="214" key="GridCell.Tab.0.left/0.23.2560.994@0.23.2560.994" timestamp="1588960816123" />
-    <state width="1563" height="214" key="GridCell.Tab.0.right" timestamp="1588973260368">
-      <screen x="0" y="23" width="2560" height="993" />
+    <state width="1481" height="214" key="GridCell.Tab.0.left/0.23.2560.995@0.23.2560.995" timestamp="1589032055817" />
+    <state width="1481" height="214" key="GridCell.Tab.0.right" timestamp="1589032055821">
+      <screen x="0" y="23" width="2560" height="995" />
     </state>
     <state width="1259" height="250" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1587835434357" />
     <state width="1415" height="327" key="GridCell.Tab.0.right/0.23.2560.1057@0.23.2560.1057" timestamp="1587919738006" />
     <state width="1448" height="314" key="GridCell.Tab.0.right/0.23.2560.992@0.23.2560.992" timestamp="1588694420469" />
     <state width="1563" height="214" key="GridCell.Tab.0.right/0.23.2560.993@0.23.2560.993" timestamp="1588973260368" />
     <state width="1563" height="214" key="GridCell.Tab.0.right/0.23.2560.994@0.23.2560.994" timestamp="1588960816124" />
+    <state width="1481" height="214" key="GridCell.Tab.0.right/0.23.2560.995@0.23.2560.995" timestamp="1589032055821" />
     <state x="1090" y="59" width="982" height="948" key="SettingsEditor" timestamp="1588693125732">
       <screen x="0" y="23" width="2560" height="992" />
     </state>
@@ -274,6 +269,6 @@
     <state width="600" height="428" key="javadoc.popup/0.23.2560.1057@0.23.2560.1057" timestamp="1587899807038" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/training$training.coverage" NAME="training Coverage Results" MODIFIED="1588960816108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/training$training.coverage" NAME="training Coverage Results" MODIFIED="1589032055784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

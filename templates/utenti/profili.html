@@ -15,20 +15,12 @@
                                 <strong>@{{ utente.username }}</strong>
                             </a>
                         </p>
-
                         Iscrizione: {{ utente.date_joined|date:"d M Y" }}<br>
                         Posts: {{ utente.post.count }}<br>
                     </div>
-
                 </div>
-
             </div>
-
-
-
         {% if forloop.counter|divisibleby:"3" or forloop.last %}</div>{% endif %}
         {% if forloop.counter|divisibleby:"3" and not forloop.last %}<div class="row">{% endif %}
     {% endfor %}
-
-
 {% endblock contenuti %}

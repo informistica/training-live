@@ -1,109 +1,134 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
-{% block head_title %}{{ post.title }}{% endblock head_title%}
+{% block head_title %}{{ post.title }}{% endblock head_title %}
 
 {% block contenuti %}
 
-<div class="row">
-  <div class="col-8">
-      <div class="card my-2">
-          <div class="card-header">
-            <h3>{{post.titolo}}</h3>
-          </div>
-          <div class="card-body">
-            {{post.contenuto}}
-          </div>
-          <div class="card-footer">
-            <b>Pubblicato da :</b> <a href="{% url 'user_profile' username=post.autore %}">{{post.autore}}</a> {{post.data_creazione}}
-            {% if request.user == post.autore %}
-                <a href="{% url 'blog:modifica_post' pk=post.id %}">  
-                <input type="submit" value="MODIFICA" class="btn btn-danger my-1" value="MODIFICA">
-                </a>
-            {% else %}
-            <p>Non sei l'autore del post non puoi modificarlo</p>
-            {% endif %}
-          </div>
-      </div>
-  </div>
-</div>
-  
-<br><hr>
-  {% with comments.count as total_comments %}
-    <h4>
-      Commenti : {{ total_comments }}
-    </h4>
-  {% endwith %}
-  <hr>
-  <div class="row mb-2 comments">
-  {% for comment in comments %}
-  <div class="col-8">
-    <div class="card my-2">
-        <div class="card-body">
-          {{ comment.contenuto|linebreaks }}
-        </div>
-        <div class="card-footer">
-          Commento {{ forloop.counter }} di {{ comment.autore }} punti:({{ comment.punti }})
-          {{ comment.data_creazione }}
+    <div class="row">
+        <div class="col-8">
+            <div class="card my-2">
+                <div class="card-header">
+                    <h3>{{ post.titolo }}</h3>
+                </div>
+                <div class="card-body">
+                    {{ post.contenuto }}
+                </div>
+                <div class="card-footer">
+                    <b>Pubblicato da :</b> <a
+                        href="{% url 'user_profile' username=post.autore %}">{{ post.autore }}</a> {{ post.data_creazione }}
+                    {% if request.user == post.autore %}
+                        <a href="{% url 'blog:modifica_post' pk=post.id %}">
+                            <input type="submit" value="MODIFICA" class="btn btn-danger my-1" value="MODIFICA">
+                        </a>
+                    {% else %}
+                        <p>Non sei l'autore del post non puoi modificarlo</p>
+                    {% endif %}
+                </div>
+            </div>
         </div>
     </div>
-  </div>
-  {% empty %}
-    <p>Non ci sono ancora commenti</p>
-  {% endfor %}
-  </div>
-  {% if new_comment %}
-    <br><h4>Il tuo commento è stato aggiunto</h4>
-  {% else %}
-  <br>
-  <div class="row">
-    <div class="col-8">
-        <div class="card my-2">
-            <div class="card-header">
-              <h3><h4>Aggiungi un nuovo commento</h4></h3>
-            </div>
-            <div class="card-body">
-              <form method="POST" id="post-form">
-                {{ comment_form|crispy }}
-                {% csrf_token %}
-                <p><input type="submit" class="btn btn-info" value="Aggiungi commento"></p>
-              </form>
-            </div>
-            <div class="card-footer">
 
+    <br>
+    <hr>
+    {% with comments.count as total_comments %}
+        <h4>
+            Commenti : {{ total_comments }}
+        </h4>
+    {% endwith %}
+    <hr>
+    <div class="row mb-2 comments">
+        {% for comment in comments %}
+            <div class="col-8">
+                <div class="card my-2">
+                    <div class="card-body">
+                        {{ comment.contenuto|linebreaks }}
+                    </div>
+                    <div class="card-footer">
+                        Commento {{ forloop.counter }} di {{ comment.autore }} punti:({{ comment.punti }})
+                        {{ comment.data_creazione }}
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p>Non ci sono ancora commenti</p>
+        {% endfor %}
+    </div>
+    {% if new_comment %}
+        <br><h4>Il tuo commento è stato aggiunto</h4>
+    {% else %}
+        <br>
+        <div class="row">
+            <div class="col-8">
+                <div class="card my-2">
+                    <div class="card-header">
+                        <h3><h4>Aggiungi un nuovo commento</h4></h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" id="post-form">
+                            {{ comment_form|crispy }}
+                            {% csrf_token %}
+                            <p><input type="submit" class="btn btn-info" value="Aggiungi commento"></p>
+                           <!-- <p><input type="button" onclick="inviaCommento();" class="btn btn-info"
+                                      value="Aggiungi commento2"></p>-->
+                        </form>
+                    </div>
+                    <div class="card-footer">
+
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-  </div>
-  {% endif %}
+    {% endif %}
 
     <script>
-        $(document).on('submit', '#post-form',function(e){
+        function inviaCommento() {
+            let commento = document.getElementById("id_contenuto").value;
+            let csrfmiddlewaretoken = document.getElementsByName("csrfmiddlewaretoken")[0].value
+            let parametri = "description=" + commento + "&csrfmiddlewaretoken=" + csrfmiddlewaretoken;
+            let url = "{% url 'blog:leggi_post' pk=post.id %}"
+            var xhttp = new XMLHttpRequest();
+            //per il metodo post
+            xhttp.onreadystatechange = function () {
+                if ((xhttp.readyState == 4) && (xhttp.status == 200)) {
+                    var risposta = xhttp.responseText;
+                    alert(risposta);
+                 //   var rispjson = JSON.parse(risposta);
+                  //  alert(rispjson);
+                }
+            };
+            xhttp.open("post", url, true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send(parametri);
+
+        }
+
+        $(document).on('submit', '#post-form', function (e) {
             e.preventDefault();
             $.ajax({
-                type:'POST',
-                url:'{% url 'blog:leggi_post' pk=post.id %}',
-                data:{
-                    description:$('#id_contenuto').val(),
-                    csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                type: 'POST',
+                url: '{% url 'blog:leggi_post' pk=post.id %}',
+                data: {
+                    description: $('#id_contenuto').val(),
+                    csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
                     action: 'post'
                 },
-                success:function(json){
+                success: function (json) {
                     document.getElementById("post-form").reset();
-                    $(".comments").append(''+
+                    $(".comments").append('' +
                         '<div class="col-8">' +
-                            ' <div class="card my-2">' +
-                                '<div class="card-body">' + json.description + '</div>' +
-                                '<div class="card-footer">Commento '+ json.num_comments + ' di ' + json.autore + ' punti(1) '+ json.data_creazione +
-                                '</div>'+
-                            '</div>' +
+                        ' <div class="card my-2">' +
+                        '<div class="card-body">' + json.description + '</div>' +
+                        '<div class="card-footer">Commento ' + json.num_comments + ' di ' + json.autore + ' punti(1) ' + json.data_creazione +
+                        '</div>' +
+                        '</div>' +
                         '</div>'
                     )
                 },
-                error : function(xhr,errmsg,err) {
-                $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: "+errmsg+
-                    " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
-                console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
-            }
+                error: function (xhr, errmsg, err) {
+                    $('#results').html("<div class='alert-box alert radius' data-alert>Oops! c'è stato un errore: " + errmsg +
+                        " <a href='#' class='close'>&times;</a></div>"); // aggiungi l'errore al dom
+                    console.log(xhr.status + ": " + xhr.responseText); // mostro nella console le info sull'errore
+                }
             });
         });
     </script>

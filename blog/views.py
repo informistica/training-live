@@ -101,6 +101,8 @@ def PostDetailView2(request, pk):
             new_comment.autore = request.user
             # Salvo il commento nel database
             new_comment.save()
+            #pulisco il form
+            comment_form = BlogCommentModelForm()
     else:
         # preparo il form vuoto in cui scrivere il commento
         comment_form = BlogCommentModelForm()

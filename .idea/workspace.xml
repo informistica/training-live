@@ -31,18 +31,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94d8b8e6-e53f-4a05-8b07-8d200f026560" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/utenti/profilo_modifica.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utenti/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utenti/signals.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/utenti/profilo.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/utenti/profilo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utenti/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/utenti/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utenti/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/utenti/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utenti/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/utenti/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utenti/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/utenti/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utenti/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/utenti/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utenti/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/utenti/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utenti/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/utenti/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -160,7 +149,7 @@
       <workItem from="1589378674140" duration="6616000" />
       <workItem from="1589390258945" duration="1021000" />
       <workItem from="1589707319275" duration="33000" />
-      <workItem from="1589731670146" duration="6519000" />
+      <workItem from="1589731670146" duration="7089000" />
     </task>
     <task id="LOCAL-00001" summary="Connect datasource dbsqlite">
       <created>1588864289143</created>

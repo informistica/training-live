@@ -10,8 +10,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.views.generic.list import ListView
 from django.db.models import Count, Sum
-from django.http import JsonResponse
-from django.urls import reverse_lazy
 
 
 # Create your views here.
@@ -59,7 +57,6 @@ def userProfileView(request, username):
 def userProfileModifyView(request, username):
     profile = get_object_or_404(Profile, user=request.user)
     profile_form = UserChangeForm(request.POST or None, instance=profile)
-
     if request.method == 'POST':
         if profile_form.is_valid():
             profile_form.save()
@@ -68,39 +65,3 @@ def userProfileModifyView(request, username):
 
     context = {'profile_form': profile_form}
     return render(request, 'utenti/profilo_modifica.html', context)
-
-
-"""
-def PostDetailView2(request, pk):
-    post = get_object_or_404(BlogPostModel, id=pk)
-    # Lista di commenti attivi per questo post
-    comments = post.comments.filter(attivo=True)
-    num_comments = post.comments.count() + 1
-    response_data = {}
-    if request.POST.get('action') == 'post':
-        description = request.POST.get('description')
-        response_data['description'] = description
-        response_data['autore'] = request.user.get_username()
-        response_data['num_comments'] = num_comments
-        myDate = datetime.datetime.now()
-        #response_data['data_creazione'] = myDate
-        format_date = myDate.strftime("%A %d %B %Y %H:%M")
-        response_data['data_creazione'] = format_date
-
-        BlogCommentModel.objects.create(
-            contenuto=description,
-            autore=request.user,
-            post=post,
-        )
-        return JsonResponse(response_data)
-    else:
-        # preparo il form vuoto in cui scrivere il commento
-        comment_form = BlogCommentModelForm()
-
-    context = {'post': post,
-               'comments': comments,
-               'comment_form': comment_form
-               }
-
-    return render(request, 'blog/post_detail.html', context)
-"""

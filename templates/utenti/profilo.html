@@ -4,7 +4,7 @@
 
 {% block contenuti %}
 
-<!-- https://getbootstrap.com/docs/4.4/components/card/ -->
+    <!-- https://getbootstrap.com/docs/4.4/components/card/ -->
 
     <div class="row">
         <div class="col-4">
@@ -15,10 +15,16 @@
                 <div class="card-body">
                     <p class="lead">@{{ user }}</p>
                     <p class="mb-0">Iscrizione: {{ user.date_joined|date:"d M Y" }}</p>
+                    <p class="mb-0">Città: {{ user.profile.city }}</p>
+                    <p class="mb-0">Biografia: {{ user.profile.bio }}</p>
                     <p class="mb-0">Post: {{ user.post.count }}</p>
                     <p class="mb-0">Commenti: {{ user.comment.count }}</p>
-                    <p class="mb-0">Punti:{% if punti_utente.punti__sum == None %} 0 {% else %} {{ punti_utente.punti__sum }} {% endif %}</p>
-
+                    <p class="mb-0">Punti:{% if punti_utente.punti__sum == None %} 0 {% else %}
+                        {{ punti_utente.punti__sum }} {% endif %}</p>
+                    {% if request.user == user %}
+                        <a
+                        href="{% url 'user_profile_modify' username=request.user %}">Modifica</a>
+                    {% endif %}
 
                 </div>
                 <div class="card-footer"></div>
@@ -33,21 +39,22 @@
                 </div>
                 <div class="card-body">
                     {% for post in post_utente %}
-                        <p><strong> Titolo: </strong> <a href="{% url 'blog:leggi_post' pk=post.pk%}">{{ post.titolo }}</a>
+                        <p><strong> Titolo: </strong> <a
+                                href="{% url 'blog:leggi_post' pk=post.pk %}">{{ post.titolo }}</a>
                             <br>{{ post.contenuto }}
                             <br>{{ post.data_creazione }}
-                            <br>Stato : 
+                            <br>Stato :
                             {% if post.bozza == True %}
-                            Bozza
+                                Bozza
                             {% else %}
-                            Pubblicato
+                                Pubblicato
                             {% endif %}
                         </p>
                     {% empty %}
                         {% if request.user != user %}
                             <p>{{ user }} non ha creato alcun post!</p>
                         {% else %}
-                            <p>Non hai creato alcun post! <a href="{% url 'blog:crea_post'%}">Inizia Subito!</a></p>
+                            <p>Non hai creato alcun post! <a href="{% url 'blog:crea_post' %}">Inizia Subito!</a></p>
                         {% endif %}
                     {% endfor %}
                 </div>
@@ -66,16 +73,16 @@
                 </div>
                 <div class="card-body">
                     {% for commento in commenti_utente %}
-                        <br>{{ forloop.counter}}) {{ commento.contenuto }}
-                            <br>{{ commento.data_creazione }}
-                            <br>Punti:{% if commento.punti == None %} 0 {% else %} {{ commento.punti }} {% endif %}
-                            <br>Stato : 
-                            {% if commento.attivo == True %}
+                        <br>{{ forloop.counter }}) {{ commento.contenuto }}
+                        <br>{{ commento.data_creazione }}
+                        <br>Punti:{% if commento.punti == None %} 0 {% else %} {{ commento.punti }} {% endif %}
+                        <br>Stato :
+                        {% if commento.attivo == True %}
                             Attivo
-                            {% else %}
+                        {% else %}
                             Disattivo
-                            {% endif %}
-                            <br><a href="{% url 'blog:leggi_post' pk=commento.post.pk%}"> -> vai alla discussione</a>
+                        {% endif %}
+                        <br><a href="{% url 'blog:leggi_post' pk=commento.post.pk %}"> -> vai alla discussione</a>
                         </p>
                         <hr>
                     {% empty %}

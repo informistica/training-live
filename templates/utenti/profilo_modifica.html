@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block head_title %}{{ post.title }}{% endblock head_title %}
+
+{% block contenuti %}
+
+        <br>
+        <div class="row">
+            <div class="col-8">
+                <div class="card my-2">
+                    <div class="card-header">
+                        <h3><h4>Modifica profilo</h4></h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" id="profilo-form">
+                            {{ profile_form|crispy }}
+                            {% csrf_token %}
+                            <p><input type="submit" class="btn btn-info" value="Modifica"></p>
+                        </form>
+                    </div>
+                    <div class="card-footer">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <script>
+
+    </script>
+{% endblock contenuti %}

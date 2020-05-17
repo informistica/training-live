@@ -30,11 +30,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94d8b8e6-e53f-4a05-8b07-8d200f026560" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/post_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/post_detail.html" afterDir="false" />
-    </list>
+    <list default="true" id="94d8b8e6-e53f-4a05-8b07-8d200f026560" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,6 +145,7 @@
       <workItem from="1589127592089" duration="729000" />
       <workItem from="1589378674140" duration="6616000" />
       <workItem from="1589390258945" duration="1021000" />
+      <workItem from="1589707319275" duration="33000" />
     </task>
     <task id="LOCAL-00001" summary="Connect datasource dbsqlite">
       <created>1588864289143</created>

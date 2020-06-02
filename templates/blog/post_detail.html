@@ -46,6 +46,14 @@
                     <div class="card-footer">
                         Commento {{ forloop.counter }} di {{ comment.autore }} punti:({{ comment.punti }})
                         {{ comment.data_creazione }}
+                        <br>
+                        {% if request.user == comment.autore %}
+                            <a href="{% url 'blog:modifica_comment' pk_comment=comment.id pk_post=post.id%}">
+                                <input type="submit" value="MODIFICA" class="btn btn-danger my-1" value="MODIFICA">
+                            </a>
+                        {% else %}
+                            <p>Non sei l'autore del commento non puoi modificarlo</p>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -68,8 +76,8 @@
                             {{ comment_form|crispy }}
                             {% csrf_token %}
                             <p><input type="submit" class="btn btn-info" value="Aggiungi commento"></p>
-                           <!-- <p><input type="button" onclick="inviaCommento();" class="btn btn-info"
-                                      value="Aggiungi commento2"></p>-->
+                            <!-- <p><input type="button" onclick="inviaCommento();" class="btn btn-info"
+                                       value="Aggiungi commento2"></p>-->
                         </form>
                     </div>
                     <div class="card-footer">
@@ -92,8 +100,8 @@
                 if ((xhttp.readyState == 4) && (xhttp.status == 200)) {
                     var risposta = xhttp.responseText;
                     alert(risposta);
-                 //   var rispjson = JSON.parse(risposta);
-                  //  alert(rispjson);
+                    //   var rispjson = JSON.parse(risposta);
+                    //  alert(rispjson);
                 }
             };
             xhttp.open("post", url, true);

@@ -31,9 +31,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94d8b8e6-e53f-4a05-8b07-8d200f026560" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/blog/modifica_comment.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blog/post_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/post_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/training/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +81,10 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Python.training">
+  <component name="RunManager" selected="JavaScript Debug.post_detail.html">
+    <configuration name="post_detail.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/training/templates/blog/post_detail.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="training" type="PythonConfigurationType" factoryName="Python">
       <module name="training" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -121,6 +130,11 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.post_detail.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -151,7 +165,9 @@
       <workItem from="1589390258945" duration="1021000" />
       <workItem from="1589707319275" duration="33000" />
       <workItem from="1589731670146" duration="8315000" />
-      <workItem from="1589783350342" duration="1962000" />
+      <workItem from="1589783350342" duration="5380000" />
+      <workItem from="1589902345812" duration="3946000" />
+      <workItem from="1591113861634" duration="4666000" />
     </task>
     <task id="LOCAL-00001" summary="Connect datasource dbsqlite">
       <created>1588864289143</created>
@@ -222,46 +238,78 @@
       <screen x="0" y="23" width="2560" height="992" />
     </state>
     <state x="1134" y="281" key="FileChooserDialogImpl/0.23.2560.992@0.23.2560.992" timestamp="1588692827833" />
-    <state width="1712" height="225" key="GridCell.Tab.0.bottom" timestamp="1589751301857">
+    <state width="1612" height="175" key="GridCell.Tab.0.bottom" timestamp="1591118133600">
       <screen x="0" y="23" width="2560" height="1057" />
     </state>
     <state width="1259" height="250" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1587835434358" />
-    <state width="1712" height="225" key="GridCell.Tab.0.bottom/0.23.2560.1057@0.23.2560.1057" timestamp="1589751301857" />
+    <state width="1612" height="175" key="GridCell.Tab.0.bottom/0.23.2560.1057@0.23.2560.1057" timestamp="1591118133600" />
     <state width="1448" height="314" key="GridCell.Tab.0.bottom/0.23.2560.992@0.23.2560.992" timestamp="1588694420469" />
     <state width="1481" height="214" key="GridCell.Tab.0.bottom/0.23.2560.993@0.23.2560.993" timestamp="1589133744753" />
     <state width="1889" height="225" key="GridCell.Tab.0.bottom/0.23.2560.994@0.23.2560.994" timestamp="1589391538241" />
     <state width="1544" height="241" key="GridCell.Tab.0.bottom/0.23.2560.995@0.23.2560.995" timestamp="1589389872326" />
     <state width="1544" height="241" key="GridCell.Tab.0.bottom/0.23.2560.996@0.23.2560.996" timestamp="1589384055942" />
-    <state width="1712" height="225" key="GridCell.Tab.0.center" timestamp="1589751301857">
+    <state width="1612" height="175" key="GridCell.Tab.0.center" timestamp="1591118133599">
       <screen x="0" y="23" width="2560" height="1057" />
     </state>
     <state width="1259" height="250" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1587835434356" />
-    <state width="1712" height="225" key="GridCell.Tab.0.center/0.23.2560.1057@0.23.2560.1057" timestamp="1589751301857" />
+    <state width="1612" height="175" key="GridCell.Tab.0.center/0.23.2560.1057@0.23.2560.1057" timestamp="1591118133599" />
     <state width="1448" height="314" key="GridCell.Tab.0.center/0.23.2560.992@0.23.2560.992" timestamp="1588694420468" />
     <state width="1481" height="214" key="GridCell.Tab.0.center/0.23.2560.993@0.23.2560.993" timestamp="1589133744753" />
     <state width="1889" height="225" key="GridCell.Tab.0.center/0.23.2560.994@0.23.2560.994" timestamp="1589391538241" />
     <state width="1544" height="241" key="GridCell.Tab.0.center/0.23.2560.995@0.23.2560.995" timestamp="1589389872325" />
     <state width="1544" height="241" key="GridCell.Tab.0.center/0.23.2560.996@0.23.2560.996" timestamp="1589384055941" />
-    <state width="1712" height="225" key="GridCell.Tab.0.left" timestamp="1589751301857">
+    <state width="1612" height="175" key="GridCell.Tab.0.left" timestamp="1591118133599">
       <screen x="0" y="23" width="2560" height="1057" />
     </state>
     <state width="1259" height="250" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1587835434356" />
-    <state width="1712" height="225" key="GridCell.Tab.0.left/0.23.2560.1057@0.23.2560.1057" timestamp="1589751301857" />
+    <state width="1612" height="175" key="GridCell.Tab.0.left/0.23.2560.1057@0.23.2560.1057" timestamp="1591118133599" />
     <state width="1448" height="314" key="GridCell.Tab.0.left/0.23.2560.992@0.23.2560.992" timestamp="1588694420468" />
     <state width="1481" height="214" key="GridCell.Tab.0.left/0.23.2560.993@0.23.2560.993" timestamp="1589133744752" />
     <state width="1889" height="225" key="GridCell.Tab.0.left/0.23.2560.994@0.23.2560.994" timestamp="1589391538240" />
     <state width="1544" height="241" key="GridCell.Tab.0.left/0.23.2560.995@0.23.2560.995" timestamp="1589389872325" />
     <state width="1544" height="241" key="GridCell.Tab.0.left/0.23.2560.996@0.23.2560.996" timestamp="1589384055941" />
-    <state width="1712" height="225" key="GridCell.Tab.0.right" timestamp="1589751301857">
+    <state width="1612" height="175" key="GridCell.Tab.0.right" timestamp="1591118133600">
       <screen x="0" y="23" width="2560" height="1057" />
     </state>
     <state width="1259" height="250" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1587835434357" />
-    <state width="1712" height="225" key="GridCell.Tab.0.right/0.23.2560.1057@0.23.2560.1057" timestamp="1589751301857" />
+    <state width="1612" height="175" key="GridCell.Tab.0.right/0.23.2560.1057@0.23.2560.1057" timestamp="1591118133600" />
     <state width="1448" height="314" key="GridCell.Tab.0.right/0.23.2560.992@0.23.2560.992" timestamp="1588694420469" />
     <state width="1481" height="214" key="GridCell.Tab.0.right/0.23.2560.993@0.23.2560.993" timestamp="1589133744753" />
     <state width="1889" height="225" key="GridCell.Tab.0.right/0.23.2560.994@0.23.2560.994" timestamp="1589391538241" />
     <state width="1544" height="241" key="GridCell.Tab.0.right/0.23.2560.995@0.23.2560.995" timestamp="1589389872326" />
     <state width="1544" height="241" key="GridCell.Tab.0.right/0.23.2560.996@0.23.2560.996" timestamp="1589384055942" />
+    <state width="1612" height="352" key="GridCell.Tab.1.bottom" timestamp="1591116246348">
+      <screen x="0" y="23" width="2560" height="1057" />
+    </state>
+    <state width="1612" height="352" key="GridCell.Tab.1.bottom/0.23.2560.1057@0.23.2560.1057" timestamp="1591116246348" />
+    <state width="1612" height="352" key="GridCell.Tab.1.center" timestamp="1591116246347">
+      <screen x="0" y="23" width="2560" height="1057" />
+    </state>
+    <state width="1612" height="352" key="GridCell.Tab.1.center/0.23.2560.1057@0.23.2560.1057" timestamp="1591116246347" />
+    <state width="1612" height="352" key="GridCell.Tab.1.left" timestamp="1591116246346">
+      <screen x="0" y="23" width="2560" height="1057" />
+    </state>
+    <state width="1612" height="352" key="GridCell.Tab.1.left/0.23.2560.1057@0.23.2560.1057" timestamp="1591116246346" />
+    <state width="1612" height="352" key="GridCell.Tab.1.right" timestamp="1591116246347">
+      <screen x="0" y="23" width="2560" height="1057" />
+    </state>
+    <state width="1612" height="352" key="GridCell.Tab.1.right/0.23.2560.1057@0.23.2560.1057" timestamp="1591116246347" />
+    <state width="1612" height="352" key="GridCell.Tab.2.bottom" timestamp="1591116246350">
+      <screen x="0" y="23" width="2560" height="1057" />
+    </state>
+    <state width="1612" height="352" key="GridCell.Tab.2.bottom/0.23.2560.1057@0.23.2560.1057" timestamp="1591116246350" />
+    <state width="1612" height="352" key="GridCell.Tab.2.center" timestamp="1591116246349">
+      <screen x="0" y="23" width="2560" height="1057" />
+    </state>
+    <state width="1612" height="352" key="GridCell.Tab.2.center/0.23.2560.1057@0.23.2560.1057" timestamp="1591116246349" />
+    <state width="1612" height="352" key="GridCell.Tab.2.left" timestamp="1591116246349">
+      <screen x="0" y="23" width="2560" height="1057" />
+    </state>
+    <state width="1612" height="352" key="GridCell.Tab.2.left/0.23.2560.1057@0.23.2560.1057" timestamp="1591116246349" />
+    <state width="1612" height="352" key="GridCell.Tab.2.right" timestamp="1591116246350">
+      <screen x="0" y="23" width="2560" height="1057" />
+    </state>
+    <state width="1612" height="352" key="GridCell.Tab.2.right/0.23.2560.1057@0.23.2560.1057" timestamp="1591116246350" />
     <state x="1090" y="59" width="982" height="948" key="SettingsEditor" timestamp="1589101801662">
       <screen x="0" y="23" width="2560" height="994" />
     </state>
@@ -273,12 +321,12 @@
       <screen x="0" y="23" width="2560" height="994" />
     </state>
     <state x="619" y="262" key="Vcs.Push.Dialog.v2/0.23.2560.994@0.23.2560.994" timestamp="1588952325717" />
-    <state width="600" height="428" key="javadoc.popup" timestamp="1587899807038">
+    <state width="600" height="428" key="javadoc.popup" timestamp="1591114775102">
       <screen x="0" y="23" width="2560" height="1057" />
     </state>
-    <state width="600" height="428" key="javadoc.popup/0.23.2560.1057@0.23.2560.1057" timestamp="1587899807038" />
+    <state width="600" height="428" key="javadoc.popup/0.23.2560.1057@0.23.2560.1057" timestamp="1591114775102" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/training$training.coverage" NAME="training Coverage Results" MODIFIED="1589783445590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/training$training.coverage" NAME="training Coverage Results" MODIFIED="1591118133586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

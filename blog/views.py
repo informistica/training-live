@@ -10,8 +10,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse
 from django.urls import reverse
-import datetime
+import datetime, locale
 
+locale.setlocale(locale.LC_ALL, 'it_IT.UTF-8')
+
+
+# https://stackoverflow.com/questions/10801397/system-date-formatting-not-using-django-locale
 
 # Create your views here.
 
@@ -118,7 +122,7 @@ def PostDetailView2(request, pk):
         response_data['autore'] = request.user.get_username()
         response_data['num_comments'] = num_comments
         myDate = datetime.datetime.now()
-        #response_data['data_creazione'] = myDate
+        # response_data['data_creazione'] = myDate
         format_date = myDate.strftime("%A %d %B %Y %H:%M")
         response_data['data_creazione'] = format_date
 
@@ -138,7 +142,6 @@ def PostDetailView2(request, pk):
                }
 
     return render(request, 'blog/post_detail.html', context)
-
 
     """
     if request.method == 'POST':
@@ -165,6 +168,7 @@ def PostDetailView2(request, pk):
     return render(request, 'blog/post_detail.html', context)
 """
 
+
 class listaPostView(LoginRequiredMixin, ListView):
     model = BlogPostModel  # modello dei dati da utilizzare
     template_name = "blog/lista_post.html"  # pagina per mostrare i dati
@@ -174,3 +178,47 @@ class listaPostView(LoginRequiredMixin, ListView):
         context = super().get_context_data(**kwargs)
         context["posts"] = BlogPostModel.objects.filter(bozza=False).order_by("-data_creazione")
         return context
+
+
+# Modifica del commento
+@login_required(login_url='/accounts/login/')
+def modificaCommentView(request, pk_comment=None, pk_post=None):
+    obj = get_object_or_404(BlogCommentModel, pk=pk_comment)  # carico il post in base alla chiave primaria pk
+    form = BlogCommentModelForm(request.POST or None, instance=obj)  # passo l'oggetto post al form
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            post = get_object_or_404(BlogPostModel, id=pk_post)
+            # Lista di commenti attivi per questo post
+            comments = post.comments.filter(attivo=True)
+            comment_form = BlogCommentModelForm()
+            context = {'post': post,
+                       'comments': comments,
+                       'comment_form': comment_form
+                       }
+            return render(request, 'blog/post_detail.html', context)
+    else:
+        context = {'comment_form': form, "pk": pk_comment
+                   }
+        return render(request, 'blog/modifica_comment.html', context)
+
+    context = {"form": form, "pk": pk_comment}  # creo i parametri
+    return render(request, 'blog/modifica_comment.html', context)
+
+
+# Elimina  commento
+@login_required(login_url='/accounts/login/')
+def eliminaCommentView(request, pk=None):
+    obj = get_object_or_404(BlogCommentModel, pk=pk)  # carico il post in base alla chiave primaria pk
+    pk_post = obj.post.id
+    obj.delete()
+    post = get_object_or_404(BlogPostModel, id=pk_post)
+    # Lista di commenti attivi per questo post
+    comments = post.comments.filter(attivo=True)
+    comment_form = BlogCommentModelForm()
+    context = {'post': post,
+               'comments': comments,
+               'comment_form': comment_form
+               }
+    
+    return render(request, 'blog/post_detail.html', context)

@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% load crispy_forms_tags %}
+{%block contenuti%}
+        <div class="container">
+            <h5>Modifica il Tuo Commento!</h5>
+            <form method="post" class="bootstrap4">
+                {% csrf_token %}
+                {{ comment_form|crispy }}
+                <a href='/blog/elimina-comment/{{pk}}'>
+                    <input type="button" class="btn btn-danger" value="ELIMINA">
+                </a>  
+                <input type="submit" class="btn btn-primary" value="MODIFICA">
+            </form>
+        </div>
+{%endblock contenuti%}   

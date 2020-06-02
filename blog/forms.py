@@ -12,4 +12,4 @@ class BlogPostModelForm(forms.ModelForm):
 class BlogCommentModelForm(forms.ModelForm):
     class Meta:
         model = BlogCommentModel
-        fields = ('contenuto',)
+        fields = ['contenuto',]

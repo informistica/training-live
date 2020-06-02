@@ -11,7 +11,7 @@ class BlogPostModel(models.Model):
     bozza = models.BooleanField()
     data_creazione = models.DateTimeField(auto_now_add=True)
     
-    def __str__(self):
+    def __str__(self):\
         return self.titolo
 
     #def get_absolute_url(self):

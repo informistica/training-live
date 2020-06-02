@@ -220,5 +220,5 @@ def eliminaCommentView(request, pk=None):
                'comments': comments,
                'comment_form': comment_form
                }
-    
+
     return render(request, 'blog/post_detail.html', context)

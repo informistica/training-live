@@ -83,7 +83,7 @@
  function aggiorna_classe(){
 	var classe = document.getElementById("classe").value;
 
-	window.location.href = "{% url 'mostra_classe' id_classe="<script>classe</script>" periodo="0" %}"
+	window.location.href = "/classi/"+classe+"/0";
 
 }
     </script>

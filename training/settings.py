@@ -121,8 +121,8 @@ DEFAULT_TO_EMAIL = 'to email'
 
 LANGUAGE_CODE = 'it-IT'
 
-#TIME_ZONE = 'UTC'
-TIME_ZONE = 'Etc/GMT-2'
+TIME_ZONE = 'UTC'
+#TIME_ZONE = 'Etc/GMT-2'
 USE_I18N = True
 
 USE_L10N = True

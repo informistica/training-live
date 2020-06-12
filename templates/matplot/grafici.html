@@ -42,11 +42,15 @@
         }
 
         $(document).on('submit', '#formStud', function (e) {
-            //var re = /\S+@\S+\.\S+/;
-            if ($('#txtStud').val() == '')
-                alert("Devi inserire i codici studenti separti da ,")
-            else {
-                e.preventDefault();
+            let s = $('#txtStud').val() .split(",");
+            //Tolgo tutti i valori che potrebbero dare problemi
+            let filtrato = s.filter(value =>
+                !(isNaN(parseInt(value)) || value < 0 )
+            );
+            e.preventDefault();
+            if ((filtrato.length == 0) || (filtrato.length != s.length))
+                alert("Input non valido");
+            else  {
                 $.ajax({
                     type: 'POST',
                     url: '{% url 'mostra_gruppi' id_classe=id_classe %}',

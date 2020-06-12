@@ -3,7 +3,7 @@
 {% block contenuti %}
     <div class="row flex-xl">
         <div class="col-sm-4">
-        <h4>Classe {{ classe }}</h4>
+            <h4>Classe {{ classe }}</h4>
             {% for stud in studenti %}
                 <small>  {{ forloop.counter }}) {{ stud }}</small><br>
             {% endfor %}
@@ -15,6 +15,14 @@
                     <input type="submit" class="btn btn-info mx-3 my-3" value="Mostra">
                 </div>
             </form>
+            <select id="classe" onchange="aggiorna_classe();" class="custom-select custom-select-sm">
+                <option selected>Seleziona la classe</option>
+                <option value="3Ct$6">3Ct</option>
+                <option value="4Ct$6">4Ct</option>
+                <option value="4Cs$6">4Cs</option>
+                <option value="5Ct$6">5Ct</option>
+                <option value="5Cs$6">5Cs</option>
+            </select>
         </div>
         <div class="col-sm-8">
             <div id="canvas">
@@ -28,30 +36,35 @@
         </div>
     </div>
     <script>
+        function aggiorna_classe() {
+            var classe = document.getElementById("classe").value;
+            window.location.href = "/plot/classi/" + classe + "/0";
+        }
+
         $(document).on('submit', '#formStud', function (e) {
             //var re = /\S+@\S+\.\S+/;
-            if ($('#txtStud').val()=='')
+            if ($('#txtStud').val() == '')
                 alert("Devi inserire i codici studenti separti da ,")
-            else{
-            e.preventDefault();
-            $.ajax({
-                type: 'POST',
-                url: '{% url 'mostra_gruppi' id_classe=id_classe %}',
-                data: {
-                    description: $('#txtStud').val(),
-                    csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
-                    action: 'post'
-                },
-                success: function (json) {
-                    document.getElementById("formStud").reset();
-                    $("#canvas").html(' <img class="img-fluid" src="data:image/png;base64,' + json.uri + '" height="500" ,width="500">')
-                },
-                error: function (xhr, errmsg, err) {
-                    $('#canvas').html("<div class='alert-box alert radius' data-alert>Oops! c'è stato un errore: " + errmsg +
-                        " <a href='#' class='close'>&times;</a></div>"); // aggiungi l'errore al dom
-                    console.log(xhr.status + ": " + xhr.responseText); // mostro nella console le info sull'errore
-                }
-            });
+            else {
+                e.preventDefault();
+                $.ajax({
+                    type: 'POST',
+                    url: '{% url 'mostra_gruppi' id_classe=id_classe %}',
+                    data: {
+                        description: $('#txtStud').val(),
+                        csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+                        action: 'post'
+                    },
+                    success: function (json) {
+                        document.getElementById("formStud").reset();
+                        $("#canvas").html(' <img class="img-fluid" src="data:image/png;base64,' + json.uri + '" height="500" ,width="500">')
+                    },
+                    error: function (xhr, errmsg, err) {
+                        $('#canvas').html("<div class='alert-box alert radius' data-alert>Oops! c'è stato un errore: " + errmsg +
+                            " <a href='#' class='close'>&times;</a></div>"); // aggiungi l'errore al dom
+                        console.log(xhr.status + ": " + xhr.responseText); // mostro nella console le info sull'errore
+                    }
+                });
             }
         });
     </script>

@@ -53,6 +53,20 @@
             </div>
           </li>
           <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Plot
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'mostra_classe' id_classe="3Ct$6" periodo="0" %}">3Ct</a>
+                    <a class="dropdown-item" href="{% url 'mostra_classe' id_classe="4Ct$6" periodo="0" %}">4Ct</a>
+                    <a class="dropdown-item" href="{% url 'mostra_classe' id_classe="4Cs$6" periodo="0" %}">4Cs</a>
+                    <a class="dropdown-item" href="{% url 'mostra_classe' id_classe="5Cs$6" periodo="0" %}">5Cs</a>
+                    <a class="dropdown-item" href="{% url 'mostra_classe' id_classe="5Ct$6" periodo="0" %}">5Ct</a>
+
+                </div>
+            </li>
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Blog
             </a>
@@ -90,7 +104,7 @@
     </nav>
 
     <div class="container my-4">
-      <h3>Training Django</h3>
+      <h3></h3>
      {%block contenuti%}
 
      {%endblock contenuti%}

@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block titolo %}Grafici{% endblock titolo %}
+{% block contenuti %}
+    <div class="row flex-xl">
+        <div class="col-sm-4">
+            <div class="card my-1 border">
+                <div class="card">
+                    <div class="card-header">
+                        Monitoraggio processi evolutivi
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Sistema di autoregolazione</h5>
+                        <p class="card-text">
+                            <small>I grafici del proprio andamento scolastico,
+                                sono segnali di feedback utili per darsi una regolata.
+                                Fissare un obiettivo e mettere in gioco i comportamenti necessari per raggiungerlo.
+                                La sequenza dei comportamenti è spiegata dai due schemi qui a lato,
+                                la struttura generale di un sistema di regolazione e il funzionamento del sistema cruise
+                                control.
+                                In sintesi si tratta di capire dove mi trovo, dove voglio arrivare e come arrivarci...
+                                più facile a dirsi che a farsi. Questi grafici mostrano l'uscita U generata da ogni
+                                studente,
+                                nei diversi periodi dell'anno e il voto conseguito. La sfida per ognuno è scoprire e
+                                applicare
+                                nel prossimo "campionato" l'ingresso I che permette di migliorare i propri risultati e
+                                alzare il proprio grafico.
+                            </small>
+                        </p>
+                        <a href="" class="btn btn-primary my-1">Leggi di più</a><br>
+
+
+                    </div>
+                </div>
+                <div class="card-footer"><b><small>Campionato scolastico 19/20</small></b></div>
+                <select id="classe" onchange="aggiorna_classe();" class="custom-select custom-select-sm">
+                    <option selected>Seleziona la classe</option>
+                    <option value="3Ct$6">3Ct</option>
+                    <option value="4Ct$6">4Ct</option>
+                    <option value="4Cs$6">4Cs</option>
+                    <option value="5Ct$6">5Ct</option>
+                    <option value="5Cs$6">5Cs</option>
+                </select>
+            </div>
+
+
+        </div>
+        <div class="col-sm-8">
+            <div class="card my-1 border">
+                <div class="card">
+                    <div class="card-header">
+                        <b> Sistema di controllo</b>
+                    </div>
+                    <div class="card-body">
+                        <img class="img-fluid"
+                             src="https://i.postimg.cc/DzZdGJz7/Schermata-2020-06-11-alle-23-08-27.png" width="85%"
+                             height="85%">
+                    </div>
+                </div>
+            </div>
+
+            <!--sistema-->
+            <br>
+            <div class="card  border">
+                <div class="card">
+                    <div class="card-header">
+                        <b> Esempio : Cruise control</b>
+                    </div>
+                    <div class="card-body">
+                        <img class="img-fluid"
+                             src="https://i.postimg.cc/YCtxpyKG/Schermata-2020-06-11-alle-23-08-46.png" width="85%"
+                             height="85%">
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="results">
+            </div>
+        </div>
+    </div>
+    <script>
+
+ function aggiorna_classe(){
+	var classe = document.getElementById("classe").value;
+
+	window.location.href = "{% url 'mostra_classe' id_classe="<script>classe</script>" periodo="0" %}"
+
+}
+    </script>
+
+{% endblock contenuti %}

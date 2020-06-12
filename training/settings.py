@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'blog',   
     'crispy_forms',
     'utenti',
+    'matplot',
 ]
 
 MIDDLEWARE = [

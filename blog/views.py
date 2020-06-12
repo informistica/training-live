@@ -12,7 +12,7 @@ from django.http import JsonResponse
 from django.urls import reverse
 import datetime, locale
 
-locale.setlocale(locale.LC_ALL, 'it_IT.UTF-8')
+#locale.setlocale(locale.LC_ALL, 'it_IT.UTF-8')
 
 
 # https://stackoverflow.com/questions/10801397/system-date-formatting-not-using-django-locale

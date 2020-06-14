@@ -32,7 +32,6 @@
   <component name="ChangeListManager">
     <list default="true" id="94d8b8e6-e53f-4a05-8b07-8d200f026560" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/matplot/grafici.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/matplot/grafici.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +163,7 @@
       <workItem from="1591113861634" duration="4768000" />
       <workItem from="1591818581592" duration="5565000" />
       <workItem from="1591854997938" duration="2513000" />
-      <workItem from="1591950925120" duration="8138000" />
+      <workItem from="1591950925120" duration="9012000" />
     </task>
     <task id="LOCAL-00001" summary="Connect datasource dbsqlite">
       <created>1588864289143</created>
